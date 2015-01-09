@@ -1,5 +1,6 @@
 (function ( $ ) {
-  $.fn.tavolo = function() {
+  $.fn.tavolo = function(){
+
     var switched = false;
     var tableElement = this;
     console.log(tableElement.selector);
@@ -8,7 +9,7 @@
       removeClass: tableElement.selector.replace('.', '')
     });
 
-    var updateTables = function() {
+    var updateTables = function(){
       if (($(window).width() < 767) && !switched ){
         switched = true;
         tableElement.each(function(i, element) {
@@ -16,7 +17,7 @@
         });
         return true;
       }
-      else if (switched && ($(window).width() > 767)) {
+      else if (switched && ($(window).width() > 767)){
         switched = false;
         tableElement.each(function(i, element) {
           unsplitTable($(element));
@@ -24,13 +25,7 @@
       }
     };
 
-    $(window).load(updateTables);
-    $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
-    $(window).on("resize", updateTables);
-
-
-    function splitTable(original)
-    {
+    function splitTable(original){
       original.wrap("<div class='tavolo-wrapper' />");
 
       var copy = original.clone();
@@ -44,13 +39,13 @@
       setCellHeights(original, copy);
     }
 
-    function unsplitTable(original) {
+    function unsplitTable(original){
       original.closest(".tavolo-wrapper").find(".tavolo-pinned").remove();
       original.unwrap();
       original.unwrap();
     }
 
-    function setCellHeights(original, copy) {
+    function setCellHeights(original, copy){
       var tr = original.find('tr'),
           tr_copy = copy.find('tr'),
           heights = [];
@@ -69,10 +64,14 @@
 
       });
 
-      tr_copy.each(function (index) {
+      tr_copy.each(function (index){
         $(this).height(heights[index]);
       });
     }
+
+    $(window).load(updateTables);
+    $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
+    $(window).on("resize", updateTables);
 
     return this;
   };
