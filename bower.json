@@ -1,6 +1,6 @@
 {
   "name": "Tavolo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": [
     "dist/css/tavolo.min.css",
     "dist/js/jquery.tavolo.min.css"

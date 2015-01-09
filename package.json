@@ -1,6 +1,6 @@
 {
   "name": "Tavolo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "Gruntfile.js",
   "description": "Sass Mixin and jQuery Plugin for responsive tables",
   "scripts": {
