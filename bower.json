@@ -1,0 +1,31 @@
+{
+  "name": "Tavolo",
+  "version": "1.0.0",
+  "main": [
+    "dist/css/tavolo.min.css",
+    "dist/js/jquery.tavolo.min.css"
+  ],
+  "authors": [
+    "Connor McKelvey <connormckelvey@gmail.com>"
+  ],
+  "description": "Sass Mixin and jQuery Plugin for responsive tables",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "responsive",
+    "tables",
+    "jquery",
+    "sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=2.1.0"
+  }
+}

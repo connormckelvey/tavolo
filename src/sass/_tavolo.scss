@@ -1,0 +1,72 @@
+/**
+ * Tavolo
+ * Responsive Tables Mixin based off ZURBs Responsive Tables
+ * v1.0.0
+ */
+
+@mixin tavolo($media: screen, $feature: max-width, $value: 767px, $tr-height: 3.5rem, $background-color: #FFF, $border-color: #CCC) {
+
+  @media #{$media} and ($feature: $value) {
+
+    margin-bottom: 0 !important;
+
+    tr {
+      height: $tr-height;
+    }
+
+    td, th {
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    th:first-child,
+    td:first-child,
+    td:first-child,
+    .pinned td {
+      display: none;
+    }
+
+    @at-root {
+      .tavolo-pinned {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $background-color;
+        width: 35%;
+        overflow: hidden;
+        overflow-x: scroll;
+        border-right: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+
+        table {
+          border-right: none;
+          border-left: none;
+          width: 100%;
+
+          th, td {
+            white-space: nowrap;
+          }
+
+          td:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      div.tavolo-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-right: 1px solid $border-color;
+
+        div.tavolo-scrollable {
+          margin-left: 35%;
+          overflow: scroll;
+          overflow-y: hidden;
+        }
+      }
+    }
+  }
+
+}
